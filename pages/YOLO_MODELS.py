@@ -94,27 +94,30 @@ if st.session_state != True:
 if uploaded_image is not None:
     delete_folder()
 
-    model_binary.predict(source=np_image, classes=1,
-                project = './RUNS_STREAMLIT/', save=True, plots=True,
-                line_thickness =10, hide_conf = True, conf=0.05, retina_masks=True)
-    # Open the image file
-    image_pred = Image.open('./RUNS_STREAMLIT/predict/image0.jpg')
+    try:
+        model_binary.predict(source=np_image, classes=1,
+                    project = './RUNS_STREAMLIT/', save=True, plots=True,
+                    hide_conf = True, conf=0.05, retina_masks=True)
+        # Open the image file
+        image_pred = Image.open('./RUNS_STREAMLIT/predict/image0.jpg')
 
-    with col2:
-        st.image(image_pred, caption="Binary Classification", use_column_width=True, width=600)
-    # Display the image using Streamlit
-    #st.image(image_pred, caption="Predicted", use_column_width=True)
+        with col2:
+            st.image(image_pred, caption="Binary Classification", use_column_width=True, width=600)
+        # Display the image using Streamlit
+        #st.image(image_pred, caption="Predicted", use_column_width=True)
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.image(uploaded_image, caption="Original Image", use_column_width=True, width=600)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.image(uploaded_image, caption="Original Image", use_column_width=True, width=600)
 
 
-    model_multiclass.predict(source=np_image,
-                project = './RUNS_STREAMLIT_multiclass/', save=True, plots=True,
-                line_thickness =10, hide_conf = True, conf=0.05, retina_masks=True)
-    # Open the image file
-    image_pred_2 = Image.open('./RUNS_STREAMLIT_multiclass/predict/image0.jpg')
+        model_multiclass.predict(source=np_image,
+                    project = './RUNS_STREAMLIT_multiclass/', save=True, plots=True,
+                    hide_conf = True, conf=0.05, retina_masks=True)
+        # Open the image file
+        image_pred_2 = Image.open('./RUNS_STREAMLIT_multiclass/predict/image0.jpg')
 
-    with col2:
-        st.image(image_pred_2, caption="Multi Parasite Classification", use_column_width=True, width=600)
+        with col2:
+            st.image(image_pred_2, caption="Multi Parasite Classification", use_column_width=True, width=600)
+    except:
+        st.subheader('Sorry, This image format is not accepted.')
