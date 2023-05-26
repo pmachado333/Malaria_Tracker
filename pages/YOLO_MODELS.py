@@ -35,6 +35,13 @@ def delete_folder():
 
 
 
+
+def call_models():
+    model_binary = YOLO('./models/best_binary.pt')
+    model_multiclass = YOLO('./models/best_multiclass.pt')
+    st.session_state['models_called'] = True
+    return model_binary, model_multiclass
+
 # Set page title
 st.title("You Only Look (LIVE) Once")
 
@@ -77,9 +84,11 @@ if uploaded_image is not None:
 
 
 ####### BACKEND
+if st.session_state != True:
+    model_binary, model_multiclass = call_models()
 
-model_binary = YOLO('./models/best_binary.pt')
-model_multiclass = YOLO('./models/best_multiclass.pt')
+#model_binary = YOLO('./models/best_binary.pt')
+#model_multiclass = YOLO('./models/best_multiclass.pt')
 
 
 if uploaded_image is not None:
