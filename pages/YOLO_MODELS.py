@@ -69,12 +69,12 @@ if uploaded_image is not None:
     np_image = np.array(pil_image)
 
 # Process the uploaded image
-if uploaded_image is not None:
+#if uploaded_image is not None:
     # Display the uploaded image
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.image(uploaded_image, caption="Original Image", use_column_width=True, width=600)
+    #col1, col2 = st.columns(2)
+    #with col1:
+        #st.image(uploaded_image, caption="Original Image", use_column_width=True, width=600)
 
 
     #st.image(uploaded_image, caption="Uploaded Image", use_column_width=True)
@@ -101,14 +101,14 @@ if uploaded_image is not None:
         # Open the image file
         image_pred = Image.open('./RUNS_STREAMLIT/predict/image0.jpg')
 
-        with col2:
-            st.image(image_pred, caption="Binary Classification", use_column_width=True, width=600)
+        #with col2:
+        st.image(image_pred, caption="Binary Classification", use_column_width=True)
         # Display the image using Streamlit
         #st.image(image_pred, caption="Predicted", use_column_width=True)
 
-        col1, col2 = st.columns(2)
-        with col1:
-            st.image(uploaded_image, caption="Original Image", use_column_width=True, width=600)
+        #col1, col2 = st.columns(2)
+        #with col1:
+        #st.image(uploaded_image, caption="Original Image", use_column_width=True, width=600)
 
 
         model_multiclass.predict(source=np_image,
@@ -117,7 +117,7 @@ if uploaded_image is not None:
         # Open the image file
         image_pred_2 = Image.open('./RUNS_STREAMLIT_multiclass/predict/image0.jpg')
 
-        with col2:
-            st.image(image_pred_2, caption="Multi Parasite Classification", use_column_width=True, width=600)
+        #with col2:
+        st.image(image_pred_2, caption="Multi Parasite Classification", use_column_width=True)
     except:
         st.subheader('Sorry, This image format is not accepted.')
