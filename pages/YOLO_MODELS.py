@@ -96,7 +96,7 @@ if uploaded_image is not None:
 
     model_binary.predict(source=np_image, classes=1,
                 project = './RUNS_STREAMLIT/', save=True, plots=True,
-                line_thickness =10, hide_conf = True, conf=0.05)
+                line_thickness =10, hide_conf = True, conf=0.05, retina_masks=True)
     # Open the image file
     image_pred = Image.open('./RUNS_STREAMLIT/predict/image0.jpg')
 
@@ -112,7 +112,7 @@ if uploaded_image is not None:
 
     model_multiclass.predict(source=np_image,
                 project = './RUNS_STREAMLIT_multiclass/', save=True, plots=True,
-                line_thickness =10, hide_conf = True, conf=0.05)
+                line_thickness =10, hide_conf = True, conf=0.05, retina_masks=True)
     # Open the image file
     image_pred_2 = Image.open('./RUNS_STREAMLIT_multiclass/predict/image0.jpg')
 
