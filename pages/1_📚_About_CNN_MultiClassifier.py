@@ -60,12 +60,51 @@ st.write("\n\n")
 st.subheader("Multi-Class Parasite Detection")
 
 st.write("""
-         Kindly review the metrics for our multiclass detection model. In this scenario, our primary goal was to accurately determine the specific parasite present when a subject is infected. We aimed to achieve high precision and recall for each parasite class, ensuring accurate identification in every case.
+         Kindly review the metrics and pre-processing fundamental for our multiclass detection model. In this scenario, our primary goal was to accurately determine the specific parasite present when a subject is infected. We aimed to achieve high precision and recall for each parasite class, ensuring accurate identification in every case.
+         """)
+
+st.write("\n\n")
+
+st.write("""
+         To ensure the effectiveness of our multiclass detection model, we carefully reviewed and considered several metrics and pre-processing techniques. These are essential for optimizing the performance and accuracy of the model.
+         """)
+
+st.subheader("Initial Dataset Imbalance:")
+
+st.write("""
+         The initial dataset provided for training was unbalanced, which posed a challenge to the overall performance of the model. To address this issue, we implemented a comprehensive pre-processing step focused on balancing the data per class. This involved utilizing advanced data augmentation methodologies to generate synthetic data and increase the representation of minority classes. As a result, the class balance was significantly improved, leading to better training and evaluation outcomes.
          """)
 
 
-# pr_curve_multiclass = Image.open('./models/Metrics/metrics_Multiclass/PR_curve.png')
-# st.image(pr_curve_multiclass)
+image_preBalance = Image.open('./image_dependencies/balancement_initial.png')
+image_postBalance = Image.open('./image_dependencies/balancement_enhanced.png')
+col1, col2 = st.columns(2)
+with col1:
+    st.image(image_preBalance, caption="Class balance before data augmentation", use_column_width=True, width=600)
+with col2:
+    st.image(image_postBalance, caption="Class balance after data augmentation", use_column_width=True, width=600)
 
-# p_curve_multiclass = Image.open('./models/Metrics/metrics_Multiclass/P_curve.png')
-# st.image(p_curve_multiclass)
+
+######################################
+
+st.write("\n\n")
+
+st.write("""
+         We trained and evaluated the model before and after applying the data augmentation techniques. The results clearly demonstrate a substantial increase in performance and the overall quality of the model. By effectively balancing the dataset, our model exhibits improved capability in accurately detecting parasites across multiple classes.
+         """)
+
+
+LC_preBalance = Image.open('./image_dependencies/lc_1.png')
+LC_postBalance = Image.open('./image_dependencies/lc_3.png')
+col1, col2 = st.columns(2)
+with col1:
+    st.image(LC_preBalance, caption="Learning Curves before data augmentation", use_column_width=True, width=600)
+with col2:
+    st.image(LC_postBalance, caption="Learning Curves after data augmentation", use_column_width=True, width=600)
+
+
+st.write("""
+        Despite the advancements achieved through data augmentation, it is important to acknowledge the inherent limitations of convolutional neural networks (CNNs) for this specific task. CNNs are not specifically designed for parasite detection, which can contribute to suboptimal performance. Therefore, we strongly recommend evaluating our model using a You Only Look Once (YOLO) model, which is specifically tailored for object detection tasks. Adopting a YOLO model can potentially enhance the performance and accuracy of parasite identification.
+        \n\n
+        Our multi-class parasite detection model provides a robust solution for accurately identifying parasites in thin blood smear samples. Through the use of advanced pre-processing techniques, including data augmentation, we have significantly improved the performance and quality of the model. However, to further enhance the capabilities of the system, we suggest exploring the implementation of a YOLO model specifically designed for object detection in this context.
+         """)
