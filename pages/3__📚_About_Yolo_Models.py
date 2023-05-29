@@ -1,6 +1,9 @@
 import streamlit as st
 from PIL import Image
 
+
+st.set_page_config(page_title='About Y.O.L.O.', page_icon='./team_pic/SLB_LOGO.png')
+st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 st.title("About YOLO Model for Malarie Detection")
 
 st.write("""

@@ -1,5 +1,10 @@
 import streamlit as st
 
+st.set_page_config(page_title='SLB DDS', page_icon='./team_pic/SLB_LOGO.png')
+
+st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
+
+
 # Page title
 st.title("Detecting Malaria Infections through Deep Learning Approach")
 

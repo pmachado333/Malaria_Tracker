@@ -4,14 +4,15 @@ from PIL import Image
 import numpy as np
 from tensorflow.keras.models import save_model , load_model
 
-
+st.set_page_config(page_title='CNN MultiClassifier', page_icon='./team_pic/SLB_LOGO.png')
+st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 # Define the header text
-image = Image.open("muscito.jpg")
+image = Image.open("./image_dependencies/muscito.jpg")
 col1, col2 = st.columns([11,3])
 with col1:
     st.markdown("# MultiClassification Model")
 with col2:
-    st.image('muscito.jpg')
+    st.image('./image_dependencies/muscito.jpg')
 
 ##### CSS #####
 with open('style.css') as f:
@@ -30,10 +31,10 @@ st.markdown("##### Upload your Thin smear image below. \
 st.markdown(" \n")
 st.markdown(" \n")
 
-fal = Image.open('Falciparum.png')
-mal = Image.open('Malariae.png')
-ova = Image.open('Ovale.png')
-viv = Image.open('Vivax.png')
+fal = Image.open('./image_dependencies/Falciparum.png')
+mal = Image.open('./image_dependencies/Malariae.png')
+ova = Image.open('./image_dependencies/Ovale.png')
+viv = Image.open('./image_dependencies/Vivax.png')
 
 image_size = (230, 190) # Set the desired image size
 col1, col2, col3, col4 = st.columns(4) # Create two columns for the images
@@ -63,10 +64,10 @@ if uploaded_image is not None:
     inverse_dict = {v: k for k, v in label_dict.items()}
     predicted_class = inverse_dict[predicted_label]
     st.image(uploaded_image)
-    st.write(predicted_class)
+    #st.write(predicted_class)
 
     ### Interpretation - update UI ###
-    finger = Image.open("finger.png")
+    finger = Image.open("./image_dependencies/finger.png")
     if predicted_label == 1:
         col1.image(finger.resize(image_size), caption='Infected by Falciparum')
     elif predicted_label == 2:
@@ -77,7 +78,8 @@ if uploaded_image is not None:
         col4.image(finger.resize(image_size), caption='Infected by Vivax')
     else:
         # Handle the case when the number is outside the range 1-4
-        st.error("Invalid number returned from the function.")
+        st.subheader('We could not detect the parasite')
+        #st.error("Invalid number returned from the function.")
 
 
 ### Next Chapter ###

@@ -43,7 +43,11 @@ def call_models():
     return model_binary, model_multiclass
 
 # Set page title
+age_icon=':bar_chart:'
+st.set_page_config(page_title='Y.O.L.O.', page_icon='./team_pic/SLB_LOGO.png')
+st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 st.title("You Only Look (LIVE) Once")
+
 
 
 
@@ -58,7 +62,8 @@ st.title("You Only Look (LIVE) Once")
 #option = st.sidebar.radio("Select an option", ("Malarie Detection", "Parasite Classification"))
 
 # Add an image uploader
-uploaded_image = st.file_uploader("Upload a thin blood smear sample to be evaluated", type=["jpg", "jpeg", "png"])
+st.subheader('Upload a thin blood smear sample to be evaluated')
+uploaded_image = st.file_uploader(" ", type=["jpg", "jpeg", "png"])
 
 
 if uploaded_image is not None:
