@@ -11,6 +11,7 @@ from PIL import Image
 import numpy as np
 import shutil
 import os
+from Binary_Model import Binary_Model
 
 def delete_folder():
     """ This function delete the temp images generated in the model"""
@@ -98,7 +99,7 @@ label_dict = {'Falciparum':0,'Malariae':1, 'Ovale':2, 'Vivax':3 }
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
 
-option = st.radio("Choose a Model:", ("CNN MultiClassifier", "YOLO"), index=0)
+option = st.radio("Choose a Model:", ('CNN Binary',"CNN MultiClassifier", "YOLO"), index=0)
 
 st.write("Welcome to our platform! If you're seeking additional details about the ideal model tailored to your specific needs, \
          we kindly invite you to explore the 'Model Information' section. There, you'll discover a wealth of insightful information \
@@ -109,6 +110,21 @@ model_selection = option
 
 #### Image uploader ####
 uploaded_image = st.file_uploader(" ", type=["tif", "png", "jpg"])
+
+
+if model_selection == 'CNN Binary':
+    if uploaded_image is not None:
+        pil_image = Image.open(uploaded_image)
+        np_image = np.array(pil_image)
+
+        model = Binary_Model()
+
+        if model.run_model(np_image)[0][0]<0.5:
+            st.subheader('Infected')
+        else:
+            st.subheader('Uninfected')
+
+        st.image(uploaded_image)
 
 if model_selection == 'YOLO':
     if uploaded_image is not None:

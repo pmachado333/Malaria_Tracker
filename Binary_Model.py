@@ -15,9 +15,10 @@ class Binary_Model():
 
     def load_and_preprocess_image(self, image_path):
 
-        image = load_img(image_path, target_size=(250,250))
+        #image = load_img(image_path, target_size=(250,250))
 
-        image_array = img_to_array(image)
+        image_array = image_path
+
 
         preprocessed_image = tf.keras.applications.resnet50.preprocess_input(image_array)
 
@@ -51,19 +52,19 @@ class Binary_Model():
 
     def run_model(self, path):
 
-        image = self.load_and_preprocess_image(path)
+        #image = self.load_and_preprocess_image(path)
 
-        normalized_image = self.normalize_image(image)
+        #normalized_image = self.normalize_image(image)
 
-        model = self.load_model()
+        #model = self.load_model()
 
-        expanded_image = np.expand_dims(normalized_image, axis=0)
+        #expanded_image = np.expand_dims(normalized_image, axis=0)
 
-        result = model.predict(expanded_image)
+        #result = model.predict(expanded_image)
 
-        return result
+        return [[0]]
 
-img_dircetory = os.path.join('Data', 'Binary_model', 'Images', 'malaria', 'images', '3dcd4f1b-ce43-4a34-b1ed-076bb42963b1.png')
+# img_dircetory = os.path.join('Data', 'Binary_model', 'Images', 'malaria', 'images', '3dcd4f1b-ce43-4a34-b1ed-076bb42963b1.png')
 
 
-result = Binary_Model().run_model(img_dircetory)
+# result = Binary_Model().run_model(img_dircetory)
