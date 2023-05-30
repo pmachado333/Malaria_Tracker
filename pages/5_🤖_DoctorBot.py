@@ -6,7 +6,7 @@ import os
 from langchain.memory import ConversationBufferMemory
 from langchain import OpenAI, LLMChain, PromptTemplate
 
-
+st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 ### App Key for openai ###
 load_dotenv()
 OPENAI_API_KEY = os.getenv('APP_KEY')
