@@ -6,11 +6,12 @@ from PIL import Image
 
 st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 # Page title
-st.title("Fast Malaria Tracker")
+st.markdown('# Fast Malaria Tracker')
 
 
 # Malaria problem worldwide
-st.header("The Malaria Problem Worldwide")
+st.markdown("### The Malaria Problem Worldwide")
+
 st.write("Malaria continues to be a significant global health challenge, affecting millions of people around the world. "
          "It is caused by the Plasmodium parasite and transmitted through the bites of infected mosquitoes. "
          "Early and accurate detection of malaria is crucial for effective treatment and prevention of its spread.")
@@ -22,15 +23,17 @@ st.write('**Yearly Deaths with Malaria**')
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 col1, col2, col3, col4, = st.columns(4)
-col1.metric("2019", "409 000", "0 %")
+col1.metric("2019", "409 000", "7.7 %")
 col2.metric("2020", "558 000", " 36 %")
 col3.metric("2021", "627 000", "12 %")
 col4.metric("2022", "619 000", "-1.2 %")
 
 
 
-# Our mission
-st.header("Our Mission")
+# Our mission\
+st.write('')
+st.write('')
+st.markdown("### Our Mission")
 st.write("At SLB, our mission is to make malaria detection more efficient and widely accessible, particularly "
          "in resource-constrained areas. By harnessing the power of deep learning and cutting-edge technology, we aim "
          "to empower healthcare professionals, researchers, and organizations in the fight against malaria.")
@@ -40,12 +43,16 @@ st.write("Through our innovative approach, we strive to contribute to the global
          "in the battle against malaria.")
 
 # Our target
-st.header("Our Target")
-st.write('### 1.Malaria Detection')
+st.write('')
+st.write('')
+st.markdown("### Our Target")
+st.write('')
+st.write('**1.Malaria Detection**')
 malaria_detection = Image.open('./image_dependencies/malaria_detection.png')
 st.image(malaria_detection)
-
-st.write('### 2.Malaria Classification')
+st.write('')
+st.write('')
+st.write('**2.Malaria Classification**')
 cla_falciparum = Image.open('./image_dependencies/cla_falciparum.png')
 cla_malariae = Image.open('./image_dependencies/cla_malariae.png')
 cla_ovale = Image.open('./image_dependencies/cla_ovale.png')
@@ -66,7 +73,9 @@ with col4:
    st.image(cla_vivax)
 
 # How deep learning models work
-st.header("How Our Deep Learning Models Work")
+st.write('')
+st.write('')
+st.markdown("### How Our Deep Learning Models Work")
 st.write("Our team has developed state-of-the-art deep learning models specifically designed to analyze thin blood smear samples "
          "and identify malaria infections. These models employ advanced algorithms and artificial intelligence techniques "
          "to accurately detect the presence of Plasmodium parasites in the samples.")
@@ -82,7 +91,7 @@ st.write("By utilizing deep learning, we are able to achieve exceptional levels 
 
 ######## Model Description part
 
-st.write("# Deep Learning Models Description")
+st.markdown("### Deep Learning Models Description")
 st.write(
     "Malaria is a life-threatening disease caused by parasites transmitted through mosquito bites. "
     "There are several species of malaria parasites, and accurate identification of the parasite species "
@@ -90,14 +99,15 @@ st.write(
     "and prone to human error. Therefore, we developed several deep learning models to automate and improve the accuracy "
     "of malaria species detection."
 )
-st.write("## 1. Convonlutional Neural Network Model")
+st.markdown("#### 1. Convonlutional Neural Network Model")
 
 cnn_structure = Image.open('./image_dependencies/cnn_structure.PNG')
 st.image(cnn_structure)
 
 
-st.write("#### 1.1 Detection with CNN Model")
+st.markdown("#### 1.1 Detection with CNN Model")
 
+st.write('')
 st.write("#### 1.2 Classify with CNN Model")
 st.write(
     "Our CNN model is trained on a large dataset of thin blood smear samples, which have been labeled "
@@ -186,14 +196,15 @@ st.write("""
         Our multi-class parasite detection model provides a robust solution for accurately identifying parasites in thin blood smear samples. Through the use of advanced pre-processing techniques, including data augmentation, we have significantly improved the performance and quality of the model. However, to further enhance the capabilities of the system, we suggest exploring the implementation of a YOLO model specifically designed for object detection in this context.
          """)
 
-
+st.write('')
+st.write('')
 
 ######### YOLO model
 yolo_logo = Image.open('./image_dependencies/yolo_logo.PNG')
 
 col1, col2 = st.columns([5,2])
 with col1:
-    st.write("## 2. You Only Look Once Model")
+    st.markdown("### 2. You Only Look Once Model")
 with col2:
     st.image(yolo_logo)
 
@@ -214,7 +225,7 @@ yolov8n = Image.open('./image_dependencies/YOLOV8n.jpg')
 st.image(yolov8n)
 
 
-st.write("#### 2.1 Detection with YOLO Model")
+st.markdown("#### 2.1 Detection with YOLO Model")
 
 st.write("""
          Below are the performance metrics for the binary detection model. Our primary focus was to maximize the recall for infection detection to ensure that no individual goes undiagnosed. However, we also aimed for a sufficiently high
@@ -230,7 +241,7 @@ st.image(pr_curve_binary)
 p_curve_binary = Image.open('./models/Metrics/metrics_Binary/P_curve.png')
 st.image(p_curve_binary)
 
-st.write("#### 2.2 Classify with YOLO Model")
+st.markdown("#### 2.2 Classify with YOLO Model")
 
 st.write("""
          Kindly review the metrics for our multiclass detection model. In this scenario, our primary goal was to accurately determine the specific parasite present when a subject is infected. We aimed to achieve high precision and recall for each parasite class, ensuring accurate identification in every case.
@@ -243,7 +254,7 @@ st.image(pr_curve_multiclass)
 p_curve_multiclass = Image.open('./models/Metrics/metrics_Multiclass/P_curve.png')
 st.image(p_curve_multiclass)
 
-st.write("#### 2.3 Classification Examples")
+st.markdown("#### 2.3 Classification Examples")
 
 st.write("""
         Below, you will find a side-by-side image comparison. On the left-hand side, we showcase images labeled by highly skilled medical doctors with years of experience in their respective fields. On the right-hand side, you will see images labeled by our cutting-edge AI model.
