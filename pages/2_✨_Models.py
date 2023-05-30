@@ -13,6 +13,9 @@ import shutil
 import os
 from Binary_Model import Binary_Model
 
+
+
+
 def delete_folder():
     """ This function delete the temp images generated in the model"""
     # Get the folder path from user input

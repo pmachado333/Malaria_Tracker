@@ -6,6 +6,7 @@ import geopandas as gpd
 from PIL import Image
 
 #### Header Section ###
+st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 
 st.markdown('# The Team')
 st.write(
