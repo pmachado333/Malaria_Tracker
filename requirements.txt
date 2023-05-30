@@ -292,3 +292,4 @@ yapf==0.32.0
 zipp==3.10.0
 openai==0.27.7
 langchain==0.0.184
+streamlit-chat==0.0.2.2
