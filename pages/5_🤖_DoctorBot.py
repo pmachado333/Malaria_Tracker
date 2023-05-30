@@ -18,7 +18,7 @@ col1, col2 = st.columns([11,7])
 with col1:
     st.markdown("# Doctorbot")
 with col2:
-    st.image('doctor.jpg')
+    st.image('./image_dependencies/doctor.jpg')
 
 
 
