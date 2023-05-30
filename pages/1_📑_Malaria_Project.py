@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 
-
+st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 # Page title
 st.title("Fast Malaria Tracker")
 
