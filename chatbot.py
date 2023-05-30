@@ -6,11 +6,23 @@ import os
 from langchain.memory import ConversationBufferMemory
 from langchain import OpenAI, LLMChain, PromptTemplate
 
+
+### App Key for openai ###
 load_dotenv()
 OPENAI_API_KEY = os.getenv('APP_KEY')
 openai.api_key = OPENAI_API_KEY
 
-st.title("Chatbot")
+
+### Header ###
+col1, col2 = st.columns([11,7])
+with col1:
+    st.markdown("# Doctorbot")
+with col2:
+    st.image('doctor.jpg')
+
+
+
+### Chatbot ###
 st.session_state['init'] = False
 
 @st.cache(allow_output_mutation=True)
@@ -50,8 +62,9 @@ if 'past' not in st.session_state:
 
 
 def get_text():
-    input_text = st.text_input('You:', '', key='input')
+    input_text = st.text_input('You:', value='', key='input')
     return input_text
+
 
 
 user_input = get_text()
@@ -62,13 +75,39 @@ if st.session_state['init'] == False:
 
 if user_input:
     output = response(llm_chain, user_input)
-    #store the output
     st.session_state.past.append(user_input)
     st.session_state.generated.append(output)
 
 
-if st.session_state['generated']:
-    for i in range(len(st.session_state['generated'])-1, -1, -1):
+### Chat UI ###
 
-        st.write(st.session_state['generated'][i], key=str(i))
-        st.write(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
+def chat_interface_v1():
+    chat_columns[0].write(
+        f'<span style="font-size: 18px"></i> {st.session_state["past"][i]}</span>',
+        unsafe_allow_html=True,
+    )
+    chat_columns[1].write(
+        f'<span style="color: blue; font-size: 18px;">{st.session_state["generated"][i]}</span>',
+        unsafe_allow_html=True,
+        key=str(i)
+    )
+
+
+def chat_interface_v2():
+    message(st.session_state["past"][i], is_user=False,
+            avatar_style="adventurer",
+            #avatar_style="personas",
+            )
+    message(st.session_state["generated"][i], is_user=True,
+            avatar_style="bottts",
+            )
+
+
+if st.session_state['generated']:
+    num_messages = len(st.session_state['generated'])
+    chat_columns = st.columns(2)
+
+    for i in range(num_messages):
+
+        #chat_interface_v1()
+        chat_interface_v2()
