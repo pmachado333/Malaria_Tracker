@@ -18,9 +18,9 @@ with col2:
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-col11, col12 = st.columns(2)
-col11.metric("Stavanger", "15 °C", "1.2 °C")
-col12.metric("Abu Dhabi", "42 °C", "-3.2 °C")
+# col11, col12 = st.columns(2)
+# col11.metric("Stavanger", "15 °C", "1.2 °C")
+# col12.metric("Abu Dhabi", "42 °C", "-3.2 °C")
 
 
 #### Species ####
