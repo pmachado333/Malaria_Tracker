@@ -161,3 +161,4 @@ cython_debug/
 raw_data/
 Data/
 data/
+*Zone.Identifier
