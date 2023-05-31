@@ -53,14 +53,15 @@ def call_models():
     return model_binary, model_multiclass
 
 
-st.set_page_config(page_title='Deep Learning Models', page_icon='./team_pic/SLB_LOGO.png', initial_sidebar_state='expanded')
+st.set_page_config(page_title='Malaria Detection', page_icon='./team_pic/SLB_LOGO.png', initial_sidebar_state='expanded', layout='wide')
 st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 # Define the header text
 image = Image.open("./image_dependencies/muscito.jpg")
-col1, col2 = st.columns([11,3])
+col1, col2 = st.columns([11,2])
 with col1:
-    st.markdown("# Deep Learning Models")
+    st.markdown("# Malaria Detection")
 with col2:
+
     st.image('./image_dependencies/muscito.jpg')
 
 ##### CSS #####
@@ -75,8 +76,7 @@ with open('style.css') as f:
 #### Species ####
 st.markdown("  \n")
 st.markdown("##### Upload your Thin smear image below. \
-    If you are infected with Malaria the computer will \
-    tell you which parasite is in your blood")
+    Are you infected?")
 st.markdown(" \n")
 st.markdown(" \n")
 
@@ -211,9 +211,9 @@ if model_selection == 'CNN MultiClassifier':
 ### Next Chapter ###
 ##### CSS #####
 
-with open('style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+# with open('style.css') as f:
+#     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-col11, col12 = st.columns(2)
-#col11.metric("Stavanger", "15 °C", "1.2 °C")
-col12.metric("Malaria Infection 2021", "247 M")
+# col11, col12 = st.columns(2)
+# #col11.metric("Stavanger", "15 °C", "1.2 °C")
+# col12.metric("Malaria Infection 2021", "247 M")

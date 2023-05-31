@@ -5,9 +5,11 @@ import plotly.express as px
 import geopandas as gpd
 from PIL import Image
 
-st.set_page_config(initial_sidebar_state='expanded')
+st.set_page_config(initial_sidebar_state='expanded', layout='wide')
 #### Header Section ###
 st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
+#st.sidebar.image('logo.jpg', width=80)
+
 
 st.markdown('# The Team')
 st.write(
@@ -76,6 +78,7 @@ with col2:
 
     st.write('')
     st.write('')
+    st.write('')
     st.write("<span style='color: blue;'>Patrick Pereira Machado</span>  - Experienced Geoscientist/ Production Engineer with a demonstrated history of working in "
             'the oil & energy industry. Skilled in Python, C++, matlab, Software development, CFD, '
             'Flow Assurance and Petrophysics evaluation. Strong research professional with a Master '
@@ -86,6 +89,8 @@ with col1:
     st.header(" ")
     st.image(xu.resize(image_size))
 with col2:
+
+    st.write('')
     st.write('')
     st.write('')
     st.write("<span style='color: blue;'>Xu Zhang</span>  - Located in Beijing, China. Master in Geology domain. Borehole geologist in SLB since 2014. "
@@ -98,6 +103,8 @@ with col2:
     st.write('')
     st.write('')
     st.write('')
+    st.write('')
+    st.write('')
     st.write("<span style='color: blue;'>Kjetil Westre</span> - Has a mixed background from G&G and data management, both technical,"
              ' sales -and business development . Today he is part of the Innovation Factori team in Norway, working on digital projects '
              'applying Data Science technologies. ', unsafe_allow_html=True)
@@ -106,6 +113,9 @@ with col1:
    st.header(" ")
    st.image(mohamed.resize(image_size))
 with col2:
+   st.write('')
+   st.write('')
+   st.write('')
    st.write('')
    st.write('')
    st.write("<span style='color: blue;'>Mohamed Nabeel Saif</span>  - Aiming to add value in the oil and gas industry,"
