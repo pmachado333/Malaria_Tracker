@@ -32,7 +32,29 @@ col4.metric("2022", "619 000", "-1.2 %")
 
 ###################################################################
 ###################################################################
-
+st.markdown('### Current State')
+st.write("""
+- 15 minutes from blood test sample to Malaria diagnosis
+- 95 % accuracy on result, from professionals.
+""")
+st.write('')
+st.write('<span style="color:blue">Questions...(?)</span>', unsafe_allow_html=True)
+#st.write('Questions...(?)')
+st.write("""
+1. Shall we accept a 5% casualty rate?
+2. What if Malaria detection was instant and you don’t have to wait 15 minutes?
+3. Is this a burden to the health care system?
+4. Is there a cost associated to Malaria detection procedures that potentially can be reduced?
+5. What are the consequences if infected individual travels to a location without local expertise on Malaria detecion?
+""")
+st.write('')
+st.write('')
+st.markdown('### Why AI?')
+st.write("""
+        - **Efficiency**: AI algorithms can analyze large amounts of data and images quickly, providing a faster and more efficient diagnosis compared to manual methods. This is particularly beneficial in areas with a high malaria burden, where prompt diagnosis is crucial for effective treatment.
+        - **Remote**: AI-powered diagnostic tools can be deployed in remote or resource-limited areas where access to skilled healthcare professionals or laboratory facilities may be limited. Or, in locations where Malaria knowledge is lackluster.
+        - **Accuracy**: AI-based systems can provide consistent and reliable results, reducing the potential for human error and variability in diagnosis. This is especially important for detecting low-level infections or differentiating between malaria species accurately.
+         """)
 
 ###################################################################
 ###################################################################
