@@ -5,6 +5,7 @@ import plotly.express as px
 import geopandas as gpd
 from PIL import Image
 
+st.set_page_config(initial_sidebar_state='expanded')
 #### Header Section ###
 st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 

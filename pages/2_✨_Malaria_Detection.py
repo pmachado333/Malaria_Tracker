@@ -52,7 +52,8 @@ def call_models():
     st.session_state['models_called'] = True
     return model_binary, model_multiclass
 
-st.set_page_config(page_title='Deep Learning Models', page_icon='./team_pic/SLB_LOGO.png')
+
+st.set_page_config(page_title='Deep Learning Models', page_icon='./team_pic/SLB_LOGO.png', initial_sidebar_state='expanded')
 st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 # Define the header text
 image = Image.open("./image_dependencies/muscito.jpg")

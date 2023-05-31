@@ -3,7 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
 
-
+st.set_page_config(initial_sidebar_state='expanded')
 st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 # Page title
 st.markdown('# Fast Malaria Tracker')
