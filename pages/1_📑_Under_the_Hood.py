@@ -110,7 +110,30 @@ st.image(cnn_structure)
 
 
 st.markdown("#### 1.1 Detection with CNN Model")
-
+st.write('This model uses a multilayer deep learning algorithm to label input images of different formats, on the probability of them showing the presence of Malarya parasites.')
+st.write('The initial dataset included images in .png or .jpg format. It comprised three distinct sets of images, amounting to 1364 images in total (~80,000 cells). Each set was prepared by different researchers: Stefanie Lopes from Brazil, Benoit Malleret from Southeast Asia, and Gabriel Rangel for the time course. The blood smears in the images were stained using Giemsa reagent.')
+st.write('The dataset comprises two categories of uninfected cells, namely red blood cells (RBCs) and leukocytes, as well as four categories of infected cells, including gametocytes, rings, trophozoites, and schizonts. Annotators had the option to label certain cells as "difficult" if they did not clearly belong to any specific cell class. The data exhibited a significant class imbalance, with uninfected RBCs constituting the majority (over 95 percent) of all cells, compared to uninfected leukocytes and infected cells.')
+st.write('Simple Feature Engineering was applied to both the training and testing datasets to classify the images to uninfected, images only showing red blood cells (RBCs) and/or leukocytes, and infected, images showing, in addition, any of the other labels. The resulted classes were inbalanced toward infected, as shown in the figures below')
+st.image('Images/Training_Infection_Dist.png')
+st.write('Image data Augmentation was appled on the training dataset to balance the labels, below are the Augmantation parameters:')
+st.markdown("- Zoom Range = 0.2")
+st.markdown("- Brightness Range = (0.8, 1.3)")
+st.write('Below is an example of an image of the minority class before and after the Augmentation process, showing a random change of brightness and zoom factor:')
+# Load your images
+image1 = 'Images/original_image.png'
+image2 = 'Images/augmented_image.png'
+# Create two columns for displaying images side by side
+col1, col2 = st.columns(2)
+# Display ima   ge1 in the first column
+with col1:
+    st.image(image1, caption='Original Image', use_column_width=True)
+# Display image2 in the second column
+with col2:
+    st.image(image2, caption='Augimanted Image', use_column_width=True)
+st.write('Good training data balance was achieved as a result of the data, below is a distribution of the Augmentated image dataset:')
+st.image('Images/Augmented_Dist.png')
+st.write('Below are the attributes of the different layers of the CNN model, as well as the total number of trainable and non-trainable parameters')
+st.image('Images/Model Parameters.png')
 st.write('')
 st.write("#### 1.2 Classify with CNN Model")
 st.write(
