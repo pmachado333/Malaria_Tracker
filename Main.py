@@ -11,6 +11,28 @@ from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(layout='wide', initial_sidebar_state='collapsed')
 
+logo = Image.open("logo.jpg")
+image_size = (100, 100)
+col1, col2,col3,col4 = st.columns([1,4,9,2])
+
+
+with col1:
+   st.header(" ")
+   st.image(logo.resize((200,200)), use_column_width=False)
+
+with col3:
+    st.header(" ")
+    st.header(" ")
+    st.header(" ")
+    st.header(" ")
+    st.markdown('<h1 style="font-family: nsimsum; color: darkgrey;"><i>Empowering Doctors, Saving Lives</i></p>', unsafe_allow_html=True)
+    #st.header('Empowering Doctors, Saving Lives')
+st.markdown('\n\n\n')
+st.markdown('\n\n\n')
+st.markdown('\n\n\n')
+st.markdown('\n\n\n')
+st.markdown('\n\n\n')
+
 img1 = Image.open('Images/SLB.jpg' )
 
 img2 = Image.open('Images/docbot_frontpage.jpg' )
