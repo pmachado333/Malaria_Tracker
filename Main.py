@@ -71,5 +71,5 @@ if col3.button("Malaria Detection", use_container_width = True):
 
 col4.image(img4_res, use_column_width=True)
 
-if col4.button("Under the Hood", use_container_width = True):
-    switch_page(page_name = 'Under the Hood')
+if col4.button("Why AI?", use_container_width = True):
+    switch_page(page_name = 'Why AI?')

@@ -30,51 +30,59 @@ col4.metric("2022", "619 000", "-1.2 %")
 
 
 
-# Our mission\
-st.write('')
-st.write('')
-st.markdown("### Our Mission")
-st.write("At SLB, our mission is to make malaria detection more efficient and widely accessible, particularly "
-         "in resource-constrained areas. By harnessing the power of deep learning and cutting-edge technology, we aim "
-         "to empower healthcare professionals, researchers, and organizations in the fight against malaria.")
+###################################################################
+###################################################################
 
-st.write("Through our innovative approach, we strive to contribute to the global efforts to eliminate malaria, "
-         "improve patient outcomes, and ultimately save lives. Join us in our mission and together, let's make a difference "
-         "in the battle against malaria.")
 
-# Our target
-st.write('')
-st.write('')
-#st.markdown("### Our Target")
-st.write('')
-st.write('**Malaria infected blood cells**')
-malaria_detection = Image.open('./image_dependencies/malaria_detection.png')
-st.image(malaria_detection)
-st.write('')
-st.write('')
-#st.write('**2.Malaria Classification**')
-cla_falciparum = Image.open('./image_dependencies/cla_falciparum.png')
-cla_malariae = Image.open('./image_dependencies/cla_malariae.png')
-cla_ovale = Image.open('./image_dependencies/cla_ovale.png')
-cla_vivax = Image.open('./image_dependencies/cla_vivax.png')
-col1, col2, col3, col4, = st.columns(4)
+###################################################################
+###################################################################
 
-with col1:
 
-   st.image(cla_falciparum)
-   st.write("**Falciparum Parasite**")
-with col2:
+# # Our mission\
+# st.write('')
+# st.write('')
+# st.markdown("### Our Mission")
+# st.write("At SLB, our mission is to make malaria detection more efficient and widely accessible, particularly "
+#          "in resource-constrained areas. By harnessing the power of deep learning and cutting-edge technology, we aim "
+#          "to empower healthcare professionals, researchers, and organizations in the fight against malaria.")
 
-   st.image(cla_malariae)
-   st.write("**Malariae Parasite**")
-with col3:
+# st.write("Through our innovative approach, we strive to contribute to the global efforts to eliminate malaria, "
+#          "improve patient outcomes, and ultimately save lives. Join us in our mission and together, let's make a difference "
+#          "in the battle against malaria.")
 
-   st.image(cla_ovale)
-   st.write("**Ovale Parasite**")
-with col4:
+# # Our target
+# st.write('')
+# st.write('')
+# #st.markdown("### Our Target")
+# st.write('')
+# st.write('**Malaria infected blood cells**')
+# malaria_detection = Image.open('./image_dependencies/malaria_detection.png')
+# st.image(malaria_detection)
+# st.write('')
+# st.write('')
+# #st.write('**2.Malaria Classification**')
+# cla_falciparum = Image.open('./image_dependencies/cla_falciparum.png')
+# cla_malariae = Image.open('./image_dependencies/cla_malariae.png')
+# cla_ovale = Image.open('./image_dependencies/cla_ovale.png')
+# cla_vivax = Image.open('./image_dependencies/cla_vivax.png')
+# col1, col2, col3, col4, = st.columns(4)
 
-   st.image(cla_vivax)
-   st.write("**Vivax Parasite**")
+# with col1:
+
+#    st.image(cla_falciparum)
+#    st.write("**Falciparum Parasite**")
+# with col2:
+
+#    st.image(cla_malariae)
+#    st.write("**Malariae Parasite**")
+# with col3:
+
+#    st.image(cla_ovale)
+#    st.write("**Ovale Parasite**")
+# with col4:
+
+#    st.image(cla_vivax)
+#    st.write("**Vivax Parasite**")
 
 # How deep learning models work
 st.write('')
@@ -84,9 +92,9 @@ st.write("Our team has developed state-of-the-art deep learning models specifica
          "and identify malaria infections. These models employ advanced algorithms and artificial intelligence techniques "
          "to accurately detect the presence of Plasmodium parasites in the samples.")
 
-st.write("By utilizing deep learning, we are able to achieve exceptional levels of accuracy and speed in malaria diagnosis, "
-         "reducing the time and resources required for manual examination. Our models have undergone rigorous training and "
-         "validation using extensive datasets, ensuring their reliability and effectiveness.")
+# st.write("By utilizing deep learning, we are able to achieve exceptional levels of accuracy and speed in malaria diagnosis, "
+#          "reducing the time and resources required for manual examination. Our models have undergone rigorous training and "
+#          "validation using extensive datasets, ensuring their reliability and effectiveness.")
 
 
 
@@ -106,7 +114,7 @@ st.write(
 st.markdown("#### 1. Convonlutional Neural Network Model")
 
 cnn_structure = Image.open('./image_dependencies/cnn_structure.PNG')
-st.image(cnn_structure)
+st.image(cnn_structure, caption='Representation of a CNN sequential layer model')
 
 
 st.markdown("#### 1.1 Detection with CNN Model")
@@ -114,26 +122,53 @@ st.write('This model uses a multilayer deep learning algorithm to label input im
 st.write('The initial dataset included images in .png or .jpg format. It comprised three distinct sets of images, amounting to 1364 images in total (~80,000 cells). Each set was prepared by different researchers: Stefanie Lopes from Brazil, Benoit Malleret from Southeast Asia, and Gabriel Rangel for the time course. The blood smears in the images were stained using Giemsa reagent.')
 st.write('The dataset comprises two categories of uninfected cells, namely red blood cells (RBCs) and leukocytes, as well as four categories of infected cells, including gametocytes, rings, trophozoites, and schizonts. Annotators had the option to label certain cells as "difficult" if they did not clearly belong to any specific cell class. The data exhibited a significant class imbalance, with uninfected RBCs constituting the majority (over 95 percent) of all cells, compared to uninfected leukocytes and infected cells.')
 st.write('Simple Feature Engineering was applied to both the training and testing datasets to classify the images to uninfected, images only showing red blood cells (RBCs) and/or leukocytes, and infected, images showing, in addition, any of the other labels. The resulted classes were inbalanced toward infected, as shown in the figures below')
-st.image('Images/Training_Infection_Dist.png')
-st.write('Image data Augmentation was appled on the training dataset to balance the labels, below are the Augmantation parameters:')
+
+st.write('Image data Augmentation was applied on the training dataset to balance the labels, below are the Augmantation parameters:')
 st.markdown("- Zoom Range = 0.2")
 st.markdown("- Brightness Range = (0.8, 1.3)")
-st.write('Below is an example of an image of the minority class before and after the Augmentation process, showing a random change of brightness and zoom factor:')
-# Load your images
-image1 = 'Images/original_image.png'
-image2 = 'Images/augmented_image.png'
-# Create two columns for displaying images side by side
-col1, col2 = st.columns(2)
-# Display ima   ge1 in the first column
-with col1:
-    st.image(image1, caption='Original Image', use_column_width=True)
-# Display image2 in the second column
-with col2:
-    st.image(image2, caption='Augimanted Image', use_column_width=True)
-st.write('Good training data balance was achieved as a result of the data, below is a distribution of the Augmentated image dataset:')
-st.image('Images/Augmented_Dist.png')
-st.write('Below are the attributes of the different layers of the CNN model, as well as the total number of trainable and non-trainable parameters')
-st.image('Images/Model Parameters.png')
+
+col11, col22 = st.columns(2)
+
+with col11:
+    st.image('Images/Training_Infection_Dist.png')
+with col22:
+    st.image('Images/Augmented_Dist.png')
+
+
+# st.write('Below is an example of an image of the minority class before and after the Augmentation process, showing a random change of brightness and zoom factor:')
+# # Load your images
+# image1 = 'Images/original_image.png'
+# image2 = 'Images/augmented_image.png'
+# # Create two columns for displaying images side by side
+# col1, col2 = st.columns(2)
+# # Display ima   ge1 in the first column
+# with col1:
+#     st.image(image1, caption='Original Image', use_column_width=True)
+# # Display image2 in the second column
+# with col2:
+#     st.image(image2, caption='Augimanted Image', use_column_width=True)
+# st.write('Good training data balance was achieved as a result of the data, below is a distribution of the Augmentated image dataset:')
+
+# st.write('Below are the attributes of the different layers of the CNN model, as well as the total number of trainable and non-trainable parameters')
+# st.image('Images/Model_Parameters.png')
+
+st.write('Upon testing on unseen data, the model scores were as following')
+
+# st.markdown("- Accuracy: 72 percent")
+# st.markdown("- Recall: 97 percent")
+# st.markdown("- Precision: 76 percent")
+
+##### CSS #####
+
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+metric1, metric2, metric3 = st.columns(3)
+metric1.metric("Accuracy", "72 %")
+metric2.metric("Recall", "97 %")
+metric3.metric("Precision", "76 %")
+
+
 st.write('')
 st.write("#### 1.2 Classify with CNN Model")
 st.write(
@@ -143,35 +178,35 @@ st.write(
 )
 
 
-st.write("###### Key Features")
-st.write(
-    "- **Automated Malaria Species Detection**: Our model can classify the malaria species present in a "
-    "given thin blood smear sample automatically, saving time and reducing human error."
-    "\n\n"
-    "- **Accuracy and Reliability**: The CNN model achieves high accuracy and reliability in identifying "
-    "the malaria species, outperforming traditional manual methods."
-    "\n\n"
-    "- **User-Friendly Interface**: Our web application provides an intuitive and user-friendly interface "
-    "to upload thin blood smear images and obtain the predicted malaria species."
-)
+# st.write("###### Key Features")
+# st.write(
+#     "- **Automated Malaria Species Detection**: Our model can classify the malaria species present in a "
+#     "given thin blood smear sample automatically, saving time and reducing human error."
+#     "\n\n"
+#     "- **Accuracy and Reliability**: The CNN model achieves high accuracy and reliability in identifying "
+#     "the malaria species, outperforming traditional manual methods."
+#     "\n\n"
+#     "- **User-Friendly Interface**: Our web application provides an intuitive and user-friendly interface "
+#     "to upload thin blood smear images and obtain the predicted malaria species."
+# )
 
-st.write("###### How to Use")
-st.write(
-    "Using our web application is simple:"
-    "\n\n"
-    "1. Click on the 'Upload Image' button to select a thin blood smear image from your device."
-    "\n\n"
-    "2. Once the image is uploaded, our CNN model will analyze it and predict the malaria species present."
-    "\n\n"
-    "3. The predicted malaria species will be displayed on the screen."
-)
+# st.write("###### How to Use")
+# st.write(
+#     "Using our web application is simple:"
+#     "\n\n"
+#     "1. Click on the 'Upload Image' button to select a thin blood smear image from your device."
+#     "\n\n"
+#     "2. Once the image is uploaded, our CNN model will analyze it and predict the malaria species present."
+#     "\n\n"
+#     "3. The predicted malaria species will be displayed on the screen."
+# )
 
 
 
-st.write("\n\n")
-st.write("\n\n")
+# st.write("\n\n")
+# st.write("\n\n")
 
-st.write("###### Multi-Class Parasite Detection")
+# st.write("###### Multi-Class Parasite Detection")
 
 st.write("""
          Kindly review the metrics and pre-processing fundamental for our multiclass detection model. In this scenario, our primary goal was to accurately determine the specific parasite present when a subject is infected. We aimed to achieve high precision and recall for each parasite class, ensuring accurate identification in every case.
@@ -179,9 +214,9 @@ st.write("""
 
 st.write("\n\n")
 
-st.write("""
-         To ensure the effectiveness of our multiclass detection model, we carefully reviewed and considered several metrics and pre-processing techniques. These are essential for optimizing the performance and accuracy of the model.
-         """)
+# st.write("""
+#          To ensure the effectiveness of our multiclass detection model, we carefully reviewed and considered several metrics and pre-processing techniques. These are essential for optimizing the performance and accuracy of the model.
+#          """)
 
 st.write("###### Initial Dataset Imbalance:")
 
@@ -229,7 +264,7 @@ st.write('')
 ######### YOLO model
 yolo_logo = Image.open('./image_dependencies/yolo_logo.PNG')
 
-col1, col2 = st.columns([5,2])
+col1, col2 = st.columns([5,1])
 with col1:
     st.markdown("### 2. You Only Look Once Model")
 with col2:
@@ -248,8 +283,8 @@ st.write("""
 
     2. Multi-Class Parasite Detection: Furthermore, the YOLO model also possesses the capability to discern different types of Malaria parasites. By leveraging its deep learning architecture, it offers valuable insights into the specific type of Malaria infection.
     """)
-yolov8n = Image.open('./image_dependencies/YOLOV8n.jpg')
-st.image(yolov8n)
+#yolov8n = Image.open('./image_dependencies/YOLOV8n.jpg')
+#st.image(yolov8n)
 
 
 st.markdown("#### 2.1 Detection with YOLO Model")
@@ -263,10 +298,14 @@ st.write("""
 
 
 pr_curve_binary = Image.open('./models/Metrics/metrics_Binary/PR_curve.png')
-st.image(pr_curve_binary)
-
 p_curve_binary = Image.open('./models/Metrics/metrics_Binary/P_curve.png')
-st.image(p_curve_binary)
+
+yolom1, yolom2 = st.columns(2)
+
+with yolom1:
+    st.image(pr_curve_binary)
+with yolom2:
+    st.image(p_curve_binary)
 
 st.markdown("#### 2.2 Classify with YOLO Model")
 
@@ -276,10 +315,18 @@ st.write("""
 
 
 pr_curve_multiclass = Image.open('./models/Metrics/metrics_Multiclass/PR_curve.png')
-st.image(pr_curve_multiclass)
+
 
 p_curve_multiclass = Image.open('./models/Metrics/metrics_Multiclass/P_curve.png')
-st.image(p_curve_multiclass)
+
+
+
+yolom3, yolom4 = st.columns(2)
+
+with yolom3:
+    st.image(pr_curve_multiclass)
+with yolom4:
+    st.image(p_curve_multiclass)
 
 st.markdown("#### 2.3 Classification Examples")
 
