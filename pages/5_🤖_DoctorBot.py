@@ -6,7 +6,7 @@ import os
 from langchain.memory import ConversationBufferMemory
 from langchain import OpenAI, LLMChain, PromptTemplate
 
-st.set_page_config(initial_sidebar_state='expanded')
+st.set_page_config(initial_sidebar_state='expanded', layout='wide')
 st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 ### App Key for openai ###
 load_dotenv()
@@ -15,7 +15,7 @@ openai.api_key = OPENAI_API_KEY
 
 
 ### Header ###
-col1, col2 = st.columns([11,7])
+col1, col2 = st.columns([11,4])
 with col1:
     st.markdown("# Doctorbot")
 with col2:

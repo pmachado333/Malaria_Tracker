@@ -3,23 +3,23 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
 
-st.set_page_config(initial_sidebar_state='expanded')
+st.set_page_config(initial_sidebar_state='expanded', layout='wide')
 st.sidebar.image('./team_pic/SLB_LOGO.png', width=80)
 # Page title
-st.markdown('# Fast Malaria Tracker')
+#st.markdown('# Fast Malaria Tracker')
 
 
 # Malaria problem worldwide
-st.markdown("### The Malaria Problem Worldwide")
+# st.markdown("### The Malaria Problem Worldwide")
 
-st.write("Malaria continues to be a significant global health challenge, affecting millions of people around the world. "
-         "It is caused by the Plasmodium parasite and transmitted through the bites of infected mosquitoes. "
-         "Early and accurate detection of malaria is crucial for effective treatment and prevention of its spread.")
+# st.write("Malaria continues to be a significant global health challenge, affecting millions of people around the world. "
+#          "It is caused by the Plasmodium parasite and transmitted through the bites of infected mosquitoes. "
+#          "Early and accurate detection of malaria is crucial for effective treatment and prevention of its spread.")
 
-malaria_map = Image.open('./image_dependencies/Malaria_world.png')
-st.image(malaria_map)
+# malaria_map = Image.open('./image_dependencies/Malaria_world.png')
+# st.image(malaria_map)
 
-st.write('**Yearly Deaths with Malaria**')
+st.markdown('### Yearly Casualties with Malaria')
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 col1, col2, col3, col4, = st.columns(4)
@@ -45,14 +45,14 @@ st.write("Through our innovative approach, we strive to contribute to the global
 # Our target
 st.write('')
 st.write('')
-st.markdown("### Our Target")
+#st.markdown("### Our Target")
 st.write('')
-st.write('**1.Malaria Detection**')
+st.write('**Malaria infected blood cells**')
 malaria_detection = Image.open('./image_dependencies/malaria_detection.png')
 st.image(malaria_detection)
 st.write('')
 st.write('')
-st.write('**2.Malaria Classification**')
+#st.write('**2.Malaria Classification**')
 cla_falciparum = Image.open('./image_dependencies/cla_falciparum.png')
 cla_malariae = Image.open('./image_dependencies/cla_malariae.png')
 cla_ovale = Image.open('./image_dependencies/cla_ovale.png')
@@ -60,17 +60,21 @@ cla_vivax = Image.open('./image_dependencies/cla_vivax.png')
 col1, col2, col3, col4, = st.columns(4)
 
 with col1:
-   st.write("**Falcuparum**")
+
    st.image(cla_falciparum)
+   st.write("**Falciparum Parasite**")
 with col2:
-   st.write("**Malariae**")
+
    st.image(cla_malariae)
+   st.write("**Malariae Parasite**")
 with col3:
-   st.write("**Ovale**")
+
    st.image(cla_ovale)
+   st.write("**Ovale Parasite**")
 with col4:
-   st.write("**Vivax**")
+
    st.image(cla_vivax)
+   st.write("**Vivax Parasite**")
 
 # How deep learning models work
 st.write('')
