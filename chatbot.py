@@ -21,11 +21,11 @@ with col2:
     st.image('doctor.jpg')
 
 
-
 ### Chatbot ###
 st.session_state['init'] = False
 
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
+@st.cache_resource()
 def init():
 
     st.session_state['init'] = True
