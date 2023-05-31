@@ -69,55 +69,33 @@ kjetil = Image.open("kjetil.jpg")
 mohamed = Image.open("mohamed.jpg")
 
 image_size = (100, 100)
-col1, col2 = st.columns([1,4])
+col1, col2, col3, col4 = st.columns([2,2,2,2])
 
 with col1:
    st.header(" ")
    st.image(patrick.resize(image_size))
-with col2:
-
-    st.write('')
-    st.write('')
-    st.write('')
-    st.write("<span style='color: blue;'>Patrick Pereira Machado</span>  - Experienced Geoscientist/ Production Engineer with a demonstrated history of working in "
+   st.write("<span style='color: blue;'>Patrick Pereira Machado</span>  - Experienced Geoscientist/ Production Engineer with a demonstrated history of working in "
             'the oil & energy industry. Skilled in Python, C++, matlab, Software development, CFD, '
             'Flow Assurance and Petrophysics evaluation. Strong research professional with a Master '
             'focused in Chemical Engineering.', unsafe_allow_html=True)
-    st.write('')
-
-with col1:
+with col2:
     st.header(" ")
     st.image(xu.resize(image_size))
-with col2:
-
-    st.write('')
-    st.write('')
-    st.write('')
     st.write("<span style='color: blue;'>Xu Zhang</span>  - Located in Beijing, China. Master in Geology domain. Borehole geologist in SLB since 2014. "
          'Good at borehole image data processing and interpretation, and Techlog software training.', unsafe_allow_html=True)
 
-with col1:
+
+
+
+with col3:
     st.header(" ")
     st.image(kjetil.resize(image_size))
-with col2:
-    st.write('')
-    st.write('')
-    st.write('')
-    st.write('')
-    st.write('')
     st.write("<span style='color: blue;'>Kjetil Westre</span> - Has a mixed background from G&G and data management, both technical,"
              ' sales -and business development . Today he is part of the Innovation Factori team in Norway, working on digital projects '
              'applying Data Science technologies. ', unsafe_allow_html=True)
-
-with col1:
-   st.header(" ")
-   st.image(mohamed.resize(image_size))
-with col2:
-   st.write('')
-   st.write('')
-   st.write('')
-   st.write('')
-   st.write('')
-   st.write("<span style='color: blue;'>Mohamed Nabeel Saif</span>  - Aiming to add value in the oil and gas industry,"
+with col4:
+    st.header(" ")
+    st.image(mohamed.resize(image_size))
+    st.write("<span style='color: blue;'>Mohamed Nabeel Saif</span>  - Aiming to add value in the oil and gas industry,"
             'and the energy industry in general, by applying the concepts of Data Analytics, Machine Learning and AI.',
             unsafe_allow_html=True)
