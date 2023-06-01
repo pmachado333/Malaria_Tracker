@@ -66,6 +66,19 @@ st.title('')
 st.title('')
 st.markdown('### Why AI?')
 
+st.write('')
+st.write('')
+col31, col32, col33  = st.columns(3)
+Efficiency_Image = Image.open('./Images/Efficiency.jpg').resize((200,200))
+Remote_Image =  Image.open('./Images/Remote.jpg').resize((200,200))
+Accuracy_Image = Image.open('./Images/Accuracy.jpg').resize((200,200))
+with col31:
+    st.image(Efficiency_Image)
+with col32:
+    st.image(Remote_Image)
+with col33:
+    st.image(Accuracy_Image)
+
 #with st.expander("Expand for details"):
 st.write("""
         - **Efficiency**: AI algorithms can analyze large amounts of data and images quickly, providing a faster and more efficient diagnosis compared to manual methods. This is particularly beneficial in areas with a high malaria burden, where prompt diagnosis is crucial for effective treatment.
@@ -75,6 +88,9 @@ st.write("""
 
 ###################################################################
 ###################################################################
+
+
+
 
 st.write('')
 st.write('')
