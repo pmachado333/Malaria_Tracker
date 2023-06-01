@@ -76,6 +76,9 @@ if st.session_state['init'] == False:
 
 if user_input:
     output = response(llm_chain, user_input)
+    if 'geology' in user_input.lower():
+        output = 'Geology rocks!!! ' + output
+    #output = response(llm_chain, user_input)
     st.session_state.past.append(user_input)
     st.session_state.generated.append(output)
 
